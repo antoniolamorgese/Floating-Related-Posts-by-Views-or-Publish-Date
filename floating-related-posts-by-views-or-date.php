@@ -2,7 +2,7 @@
 ob_start();
 /**
 * Floating Related Posts by Views or Publish Date
-*
+* 
 * @author    Antonio Lamorgese <antonio.lamorgese@gmail.com>
 * @copyright 2023 Antonio Lamorgese
 * @license   GNU General Public License v3.0
