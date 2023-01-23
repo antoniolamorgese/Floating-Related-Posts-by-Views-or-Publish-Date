@@ -7,7 +7,7 @@ ob_start();
 * @copyright 2023 Antonio Lamorgese
 * @license   GNU General Public License v3.0
 * @link      https://github.com/antoniolamorgese/display-popup-popular-post-by-views
-*/
+*/ 
 
 /**
 * Plugin Name:        Floating Related Posts by Views or Publish Date
