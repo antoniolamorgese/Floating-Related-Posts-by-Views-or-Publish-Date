@@ -1,5 +1,5 @@
 # Floating Related Posts by Views or Publish Date
-Increase website traffic free using "Floating Related Posts by Views or Publish Date". Show floating related posts at the bottom or top of the visitor's screen for 15 seconds. and only after 30 sec. from viewing the post. `Floating Related Posts by Views or Publish Date` is designed to be used on sites with a few views to sites with thousands of views. And it's free!
+Increase website traffic free using "Floating Related Posts by Views or Publish Date". Show floating related posts at the bottom or top of the visitor's screen for 15 seconds and, only after 30 sec, from viewing the post. `Floating Related Posts by Views or Publish Date` is designed to be used on sites with a few views to sites with thousands of views. And it's free!
 
 == Description ==
 
