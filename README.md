@@ -3,7 +3,7 @@ Increase website traffic free using "Floating Related Posts by Views or Publish 
 
 == Description ==
 
-Increase website traffic free using Floating Related Posts by Views or Date. Show Floating Related Posts at the bottom or top of your visitor screen. If the Polylang and WP PostViews plugins are installed "Floating Related Posts by Views or Publish Date" will randomly fetch all the most visited posts in the current language. Otherwise, the most recent posts will be shown randomly.
+If Polylang and WP PostViews plugins are installed "Floating Related Posts by Views or Publish Date" will randomly fetch all the most visited posts in the current language. Otherwise, the most recent posts will be shown randomly.
 
 `Floating Related Posts by Views or Publish Date` is compatible with PHP from 5.6 to 8.1.
 
