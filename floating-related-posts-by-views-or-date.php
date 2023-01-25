@@ -15,7 +15,7 @@ ob_start();
 * Description:        Increase website traffic free using "Floating Related Posts by Views or Publish Date". Show Floating Related Posts at the bottom or top of your visitor screen. Start <a href="options-general.php?page=floating-related-posts-by-views-or-date">Floating Related Posts Views or Date settings</a>.
 * Author:             Antonio Lamorgese
 * Author URI:         http://www.phpcodewizard.it/antoniolamorgese/
-* Version:            1.3.1
+* Version:            1.3.2
 * License:            GNU General Public License v3.0
 * License URI:        https://www.gnu.org/licenses/gpl-3.0.html
 * Text Domain:        display-popup-popular-post-by-views-or-date
@@ -168,10 +168,10 @@ if(strtolower($Background_Color) === '#cce5ff') {
 	$Excerpt_Color = 'DimGray'; 
 } else if(strtolower($Background_Color) === '#d6d8d9') {
 	// dark
-	$Excerpt_Color = 'black'; 
+	$Excerpt_Color = 'black';
 } else {	
 	$Background_Color = '#f8d7da'; 
-	$Excerpt_Color = 'brown'; 	
+	$Excerpt_Color = 'brown'; 
 }
 
 /**
@@ -401,10 +401,10 @@ if(!function_exists('floating_related_posts_add_Code_Javascript_in_tag_head')) {
 								<?php } ?>
 								jQuery('#personecheleggonoadesso').show('slow');
 								setTimeout(() => { 
-														jQuery('#personecheleggonoadesso').hide('slow'); 
-												 }, <?php echo esc_js($Seconds_For_Deactivation); ?>);
+													jQuery('#personecheleggonoadesso').hide('slow'); 
+												 }, <?php echo esc_attr($Seconds_For_Deactivation); ?>);
 							}
-						}, <?php echo esc_js($Seconds_For_Activation); ?>);
+						}, <?php echo esc_attr($Seconds_For_Activation); ?>);
 					<?php } ?>
 				});
 			</script>
@@ -431,8 +431,11 @@ if(!function_exists('floating_related_posts_add_Code_html_in_tag_body')) {
 			<?php if(($floating_related_posts_by_views_or_date_options['desktop_visibility_1']==='desktop_visibility_1') || ($total_rows<=0)) { ?>
 				<div id="personecheleggonoadesso" style="z-index: 9999; opacity: <?php echo esc_html($Opacity); ?>; max-width: 450px; border: 1px solid <?php echo esc_html($Background_Color); ?>; border-radius: 8px; background-color: <?php echo esc_html($Background_Color); ?>; position: fixed; <?php echo esc_attr($Vertical_Position); ?>: 10px; <?php echo esc_attr($Horizontal_Position); ?>: 0px;">
 					<p>
+						<a  onclick="window.location.replace('https://www.phpcodewizard.it/antoniolamorgese/');" 
+							href="#" class="close" data-dismiss="alert" aria-label="close"><i style="font-size:16px; color:black;" class="fa fa-question" aria-hidden="true"></i>&nbsp;
+						</a>
 						<a  onclick="jQuery('#personecheleggonoadesso').hide('slow'); disable_onClose = true;" 
-							href="#" class="close" data-dismiss="alert" aria-label="close">&times;&nbsp;<br 
+							href="#" class="close" data-dismiss="alert" aria-label="close"><i style="font-size:16px; color:black;" class="fa fa-times" aria-hidden="true"></i>&nbsp;<br 
 							style="margin-bottom:2px; line-height:3px; font-size: 2px;">
 						</a>
 						&nbsp;<strong style="color: <?php echo esc_html($Excerpt_Color); ?>;" id="Persone"></strong>
@@ -449,8 +452,11 @@ if(!function_exists('floating_related_posts_add_Code_html_in_tag_body')) {
 			<?php if(($floating_related_posts_by_views_or_date_options['mobile_visibility_2']==='mobile_visibility_2') || ($total_rows<=0)) { ?>
 				<div id="personecheleggonoadesso" style="z-index: 9999; opacity: <?php echo esc_html($Opacity); ?>; max-width: 450px; border: 1px solid <?php echo esc_html($Background_Color); ?>; border-radius: 8px; background-color: <?php echo esc_html($Background_Color); ?>; position: fixed; <?php echo esc_html($Vertical_Position); ?>: 10px; <?php echo esc_html($Horizontal_Position); ?>: 0px;">
 					<p>
+						<a  onclick="window.location.replace('https://www.phpcodewizard.it/antoniolamorgese/');" 
+							href="#" class="close" data-dismiss="alert" aria-label="close"><i style="font-size:16px; color:black;" class="fa fa-question" aria-hidden="true"></i>&nbsp;
+						</a>
 						<a  onclick="jQuery('#personecheleggonoadesso').hide('slow'); disable_onClose = true;" 
-							href="#" class="close" data-dismiss="alert" aria-label="close">&times;&nbsp;<br 
+							href="#" class="close" data-dismiss="alert" aria-label="close"><i style="font-size:16px; color:black;" class="fa fa-times" aria-hidden="true"></i>&nbsp;<br 
 							style="margin-bottom:2px; line-height:3px; font-size: 2px;">
 						</a>
 						&nbsp;<strong style="color: <?php echo esc_html($Excerpt_Color); ?>;" id="Persone"></strong>
