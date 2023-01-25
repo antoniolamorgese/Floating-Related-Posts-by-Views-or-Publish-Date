@@ -444,7 +444,7 @@ if(!function_exists('floating_related_posts_add_Code_html_in_tag_body')) {
 		<?php } else { ?>
 			<!-- Mobile device -->
 			<?php if(($floating_related_posts_by_views_or_date_options['mobile_visibility_2']==='mobile_visibility_2') || ($total_rows<=0)) { ?>
-				<div id="personecheleggonoadesso" style="z-index: 9999; opacity: <?php echo esc_html($Opacity); ?>; max-width: 100%; border: 1px solid <?php echo esc_html($Background_Color); ?>; border-radius: 8px; background-color: <?php echo esc_html($Background_Color); ?>; position: fixed; <?php echo esc_html($Vertical_Position); ?>: 10px; <?php echo esc_html($Horizontal_Position); ?>: 0px;">
+				<div id="personecheleggonoadesso" style="z-index: 9999; opacity: <?php echo esc_html($Opacity); ?>; max-width: 450px; border: 1px solid <?php echo esc_html($Background_Color); ?>; border-radius: 8px; background-color: <?php echo esc_html($Background_Color); ?>; position: fixed; <?php echo esc_html($Vertical_Position); ?>: 10px; <?php echo esc_html($Horizontal_Position); ?>: 0px;">
 					<p>
 						<a  onclick="jQuery('#personecheleggonoadesso').hide('slow'); disable_onClose = true;" 
 							href="#" class="close" data-dismiss="alert" aria-label="close">&times;&nbsp;<br 
