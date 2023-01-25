@@ -169,6 +169,9 @@ if(strtolower($Background_Color) === '#cce5ff') {
 } else if(strtolower($Background_Color) === '#d6d8d9') {
 	// dark
 	$Excerpt_Color = 'black'; 
+} else {	
+	$Background_Color = '#f8d7da'; 
+	$Excerpt_Color = 'brown'; 	
 }
 
 /**
