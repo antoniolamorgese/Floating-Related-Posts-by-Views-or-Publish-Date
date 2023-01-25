@@ -2,7 +2,6 @@
 ob_start();
 /**
 * Floating Related Posts by Views or Publish Date
-* Read also: https://deliciousbrains.com/create-wordpress-plugin-settings-page/
 *
 * @author    Antonio Lamorgese <antonio.lamorgese@gmail.com>
 * @copyright 2023 Antonio Lamorgese
