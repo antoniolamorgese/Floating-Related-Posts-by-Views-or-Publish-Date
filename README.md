@@ -15,7 +15,7 @@ Yes, it's really free. There's no premium version and no need to pay money to ge
 
 Please submit bugs, patches, and feature requests to:
 
-[https://github.com/antoniolamorgese/display-popup-popular-post-by-views]
+[https://github.com/antoniolamorgese/Floating-Related-Posts-by-Views-or-Publish-Date]
 
 == Installation ==
 
