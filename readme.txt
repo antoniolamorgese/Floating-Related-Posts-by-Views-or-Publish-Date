@@ -17,7 +17,7 @@ Increase your page views and bounce rate with Floating Related Posts by Views or
 Floating Related Posts by Views or Publish Date adds a banner with a cool list of related content.
 
 You can place Floating Related Posts by Views or Publish Date at the bottom or top of your website for few seconds. 
-You can change background color, text color, transparency level, seconds of activation, and so on.
+You can change background color, text color, transparency level, banner activation seconds, and so on.
 If Polylang and WP PostViews plugins are installed "Floating Related Posts by Views or Publish Date" will randomly fetch all the most visited posts in the current language. 
 Otherwise, the most recent posts will be shown randomly. Moreover, `Floating Related Posts by Views or Publish Date`, is compatible with PHP from 5.6 to 8.1.
 "Floating Related Posts by Views or Publish Date" is designed to be used on sites with a few views to sites with thousands of views.
