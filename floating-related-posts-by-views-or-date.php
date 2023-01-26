@@ -18,7 +18,7 @@ ob_start();
 * Version:            1.0.3
 * License:            GNU General Public License v3.0
 * License URI:        https://www.gnu.org/licenses/gpl-3.0.html
-* Text Domain:        display-popup-popular-post-by-views-or-date
+* Text Domain:        floating-related-posts-by-views-or-publish-date
 * GitHub Plugin URI:  https://github.com/antoniolamorgese/Floating-Related-Posts-by-Views-or-Publish-Date
 * Requires at least:  5.6
 * Tested up to:       6.1
