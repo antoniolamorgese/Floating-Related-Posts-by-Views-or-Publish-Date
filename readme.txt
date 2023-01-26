@@ -47,7 +47,7 @@ The plugin is simple to install:
 == Screenshots ==
 1. Floating Related Posts by Views or Publish Date on desktop
 2. Floating Related Posts by Views or Publish Date on smartphone
-3. Admin panel to set option plugin
+3. Admin panel to set options plugin
 
 == Changelog ==
 
