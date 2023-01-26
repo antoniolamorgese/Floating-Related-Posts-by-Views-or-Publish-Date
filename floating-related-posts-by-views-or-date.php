@@ -21,7 +21,7 @@ ob_start();
 * Text Domain:        floating-related-posts-by-views-or-publish-date
 * GitHub Plugin URI:  https://github.com/antoniolamorgese/Floating-Related-Posts-by-Views-or-Publish-Date
 * Requires at least:  5.6
-* Tested up to:       6.1
+* Tested up to:       6.1.1
 * Requires PHP:       5.6 or later
 *
 * This program is free software; you can redistribute it and/or modify it under the terms of the GNU
