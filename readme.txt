@@ -51,6 +51,9 @@ The plugin is simple to install:
 
 == Changelog ==
 
+= 1.0.4 =
+* Added Italian translation.
+
 = 1.0.3 =
 * Added close button banner.
 
