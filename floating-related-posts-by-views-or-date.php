@@ -1,37 +1,38 @@
 <?php
 ob_start();
 /**
-* Floating Related Posts by Views or Publish Date
-*
-* @author    Antonio Lamorgese <antonio.lamorgese@gmail.com>
-* @copyright 2023 Antonio Lamorgese
-* @license   GNU General Public License v3.0
-* @link      https://github.com/antoniolamorgese/Floating-Related-Posts-by-Views-or-Publish-Date
-*/
+ * Floating Related Posts by Views or Publish Date
+ *
+ * @author    Antonio Lamorgese <antonio.lamorgese@gmail.com>
+ * @copyright 2023 Antonio Lamorgese
+ * @license   GNU General Public License v3.0
+ * @link      https://github.com/antoniolamorgese/Floating-Related-Posts-by-Views-or-Publish-Date
+ * @see       https://jeremyhixon.com/tool/wordpress-option-page-generator/
+ */
 
 /**
-* Plugin Name:        Floating Related Posts by Views or Publish Date
-* Plugin URI:         https://github.com/antoniolamorgese/Floating-Related-Posts-by-Views-or-Publish-Date
-* Description:        Increase website traffic free using "Floating Related Posts by Views or Publish Date". Show Floating Related Posts at the bottom or top of your visitor screen. Start <a href="options-general.php?page=floating-related-posts-by-views-or-date">Floating Related Posts Views or Date settings</a>.
-* Author:             Antonio Lamorgese
-* Author URI:         http://www.phpcodewizard.it/antoniolamorgese/
-* Version:            1.0.4
-* License:            GNU General Public License v3.0
-* License URI:        https://www.gnu.org/licenses/gpl-3.0.html
-* Text Domain:        floating-related-posts-by-views-or-publish-date
-* Domain Path:        /languages
-* GitHub Plugin URI:  https://github.com/antoniolamorgese/Floating-Related-Posts-by-Views-or-Publish-Date
-* Requires at least:  5.6
-* Tested up to:       6.1.1
-* Requires PHP:       5.6 or later
-*
-* This program is free software; you can redistribute it and/or modify it under the terms of the GNU
-* General Public License version 3, as published by the Free Software Foundation. You may NOT assume
-* that you can use any other version of the GPL.
-*
-* This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
-* even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ * Plugin Name:        Floating Related Posts by Views or Publish Date
+ * Plugin URI:         https://github.com/antoniolamorgese/Floating-Related-Posts-by-Views-or-Publish-Date
+ * Description:        Increase website traffic free using "Floating Related Posts by Views or Publish Date". Show Floating Related Posts at the bottom or top of your visitor screen. Start <a href="options-general.php?page=floating-related-posts-by-views-or-date">Floating Related Posts Views or Date settings</a>.
+ * Author:             Antonio Lamorgese
+ * Author URI:         http://www.phpcodewizard.it/antoniolamorgese/
+ * Version:            1.0.4
+ * License:            GNU General Public License v3.0
+ * License URI:        https://www.gnu.org/licenses/gpl-3.0.html
+ * Text Domain:        floating-related-posts-by-views-or-publish-date
+ * Domain Path:        /languages
+ * GitHub Plugin URI:  https://github.com/antoniolamorgese/Floating-Related-Posts-by-Views-or-Publish-Date
+ * Requires at least:  5.6
+ * Tested up to:       6.1.1
+ * Requires PHP:       5.6 or later
+ *
+ * This program is free software; you can redistribute it and/or modify it under the terms of the GNU
+ * General Public License version 3, as published by the Free Software Foundation. You may NOT assume
+ * that you can use any other version of the GPL.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+ * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ */
 
 /**
  * Exit if called directly.
@@ -48,14 +49,13 @@ $locale;
 function floating_related_posts_by_views_or_publish_date_textdomain() {
 	global $locale;
 	$locale = apply_filters( 'plugin_locale', get_locale(), 'floating-related-posts-by-views-or-publish-date' );
-    load_textdomain( 'floating-related-posts-by-views-or-publish-date', WP_LANG_DIR . '/floating-related-posts-by-views-or-publish-date/floating-related-posts-by-views-or-publish-date-' . $locale . '.mo' );
-	load_plugin_textdomain( 'floating-related-posts-by-views-or-publish-date', false, dirname(plugin_basename(__FILE__)) . '/languages' );
+	load_plugin_textdomain( 'floating-related-posts-by-views-or-publish-date', FALSE, dirname(plugin_basename(__FILE__)) . '/languages' );
 }
 add_action('init', 'floating_related_posts_by_views_or_publish_date_textdomain');
 
 /** 
-* Add link "Settings" in Wordpress administration Plugin
-*/
+ * Add link "Settings" in Wordpress administration Plugin
+ */
 add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'floating_related_posts_status_link' );
 function floating_related_posts_status_link ( $links ) {
 	$mylinks1 = array('<a href="' . admin_url( 'options-general.php?page=floating-related-posts-by-views-or-date' ) . '">Settings</a>');
@@ -64,31 +64,31 @@ function floating_related_posts_status_link ( $links ) {
 }
 
 /** 
-* Add Code in Wordpress Settings for get option settings Plugin
-* Code Generated with "WordPress Option Page Generator" <https://jeremyhixon.com/tool/wordpress-option-page-generator/>
-*/
+ * Add Code in Wordpress Settings for get option settings Plugin
+ * Code Generated with "WordPress Option Page Generator" <https://jeremyhixon.com/tool/wordpress-option-page-generator/>
+ */
 include_once(plugin_dir_path( __FILE__ ) . 'admin/floating-related-posts-by-views-or-date-admin.php');
 $floating_related_posts_by_views_or_date_options = get_option( 'floating_related_posts_by_views_or_date_option_name' );
 global $wpdb;
 $total_rows = $wpdb->get_var("select count(option_value) from wp_options where option_name  = 'floating_related_posts_by_views_or_date_option_name'");
 
 /**
-* Set the global variables and constants.
-*/
+ * Set the global variables and constants.
+ */
 $Url_picked_post;
 $Title_picked_post;
 $Excerpt_picked_post;
 
 /**
-*	------------------------------------
-* 	Settings option: "Vertical Position"
-*	------------------------------------
-*
-*   Valid options:
-*   
-*	top
-*	bottom
-*/	
+ *	------------------------------------
+ * 	Settings option: "Vertical Position"
+ *	------------------------------------
+ *
+ *   Valid options:
+ *   
+ *	top
+ *	bottom
+ */	
 $Vertical_Position = 'top';
 if ($total_rows > 0) {
 	if(strlen($floating_related_posts_by_views_or_date_options['vertical_position_5'])>=3) {
@@ -99,15 +99,15 @@ if ($total_rows > 0) {
 }
 
 /**
-*	--------------------------------------
-* 	Settings option: "Horizontal Position"
-*	--------------------------------------
-*
-*   Valid options:
-*   
-*	right
-*	left
-*/	
+ *	--------------------------------------
+ * 	Settings option: "Horizontal Position"
+ *	--------------------------------------
+ *
+ *   Valid options:
+ *   
+ *	right
+ *	left
+ */	
 $Horizontal_Position = 'right';
 if ($total_rows > 0) {
 	if(strlen($floating_related_posts_by_views_or_date_options['horizontal_position_6'])>=4) {
@@ -118,21 +118,21 @@ if ($total_rows > 0) {
 }
 
 /**
-*	-----------------------------------
-* 	Settings option: "Background Color"
-*	-----------------------------------
-*
-*   Valid options:
-*   
-*	primary		=	#cce5ff
-*	secondary	=	#e2e3e5
-*	success		=	#d4edda
-*	danger		=	#f8d7da
-*	warning		=	#fff3cd
-*	info		=	#d1ecf1
-*	light		=	#fefefe
-*	dark		=	#d6d8d9
-*/	
+ *	-----------------------------------
+ * 	Settings option: "Background Color"
+ *	-----------------------------------
+ *
+ *   Valid options:
+ *   
+ *	primary		=	#cce5ff
+ *	secondary	=	#e2e3e5
+ *	success		=	#d4edda
+ *	danger		=	#f8d7da
+ *	warning		=	#fff3cd
+ *	info		=	#d1ecf1
+ *	light		=	#fefefe
+ *	dark		=	#d6d8d9
+ */	
 $Background_Color = '#F8D7DA'; 
 if ($total_rows > 0) {
 	if (
@@ -146,21 +146,21 @@ if ($total_rows > 0) {
 }
 
 /**
-*	--------------------------------
-* 	Settings option: "EXCERPT COLOR"
-*	--------------------------------
-*
-*   Valid options:
-*   
-*	primary		=	#cce5ff
-*	secondary	=	#e2e3e5
-*	success		=	#d4edda
-*	danger		=	#f8d7da
-*	warning		=	#fff3cd
-*	info		=	#d1ecf1
-*	light		=	#fefefe
-*	dark		=	#d6d8d9
-*/	
+ *	--------------------------------
+ * 	Settings option: "EXCERPT COLOR"
+ *	--------------------------------
+ *
+ *   Valid options:
+ *   
+ *	primary		=	#cce5ff
+ *	secondary	=	#e2e3e5
+ *	success		=	#d4edda
+ *	danger		=	#f8d7da
+ *	warning		=	#fff3cd
+ *	info		=	#d1ecf1
+ *	light		=	#fefefe
+ *	dark		=	#d6d8d9
+ */	
 if(strtolower($Background_Color) === '#cce5ff') {
 	// primary
 	$Excerpt_Color = 'RoyalBlue'; 
@@ -191,14 +191,14 @@ if(strtolower($Background_Color) === '#cce5ff') {
 }
 
 /**
-*	------------------------------
-* 	Settings option: "ADD_EXCERPT"
-*	------------------------------
-*
-*   Valid options:
-*   
-*   Yes/No
-*/	
+ *	------------------------------
+ * 	Settings option: "ADD_EXCERPT"
+ *	------------------------------
+ *
+ *   Valid options:
+ *   
+ *   Yes/No
+ */	
 $Add_Excerpt = 'YES';
 if ($total_rows > 0) {
 	if($floating_related_posts_by_views_or_date_options['excerpt_3']==='excerpt_3') {
@@ -209,16 +209,16 @@ if ($total_rows > 0) {
 }
 
 /**
-*	--------------------------
-* 	Settings option: "OPACITY"
-*	--------------------------
-*
-*   Valid options:
-*   
-*	High	
-*	Medium
-*	Low	
-*/	
+ *	--------------------------
+ * 	Settings option: "OPACITY"
+ *	--------------------------
+ *
+ *   Valid options:
+ *   
+ *	High	
+ *	Medium
+ *	Low	
+ */	
 $Opacity = 1;
 if ($total_rows > 0) {
 	if(strlen($floating_related_posts_by_views_or_date_options['opacity_7'])>=3) {
@@ -242,14 +242,14 @@ if ($total_rows > 0) {
 }
 
 /**
-*	----------------------------------------------
-* 	TIME FOR ACTIVATION (min 15 secs max 120 secs)
-*	----------------------------------------------
-*
-*   Valid options:
-*   
-*   Enter values between 15 and 120
-*/	
+ *	----------------------------------------------
+ * 	TIME FOR ACTIVATION (min 15 secs max 120 secs)
+ *	----------------------------------------------
+ *
+ *   Valid options:
+ *   
+ *   Enter values between 15 and 120
+ */	
 $Min_Activation = 15;
 $Max_Activation  = 120;
 $Seconds_For_Activation = 30;
@@ -265,14 +265,14 @@ if($Seconds_For_Activation>$Max_Activation ) $Seconds_For_Activation = $Max_Acti
 $Seconds_For_Activation = $Seconds_For_Activation*1000;
 
 /**
-*	------------------------------------------------
-* 	TIME FOR DEACTIVATION (min 15 secs max 120 secs)
-*	------------------------------------------------
-*
-*   Valid options:
-*   
-*   Enter values between 15 and 120
-*/	
+ *	------------------------------------------------
+ * 	TIME FOR DEACTIVATION (min 15 secs max 120 secs)
+ *	------------------------------------------------
+ *
+ *   Valid options:
+ *   
+ *   Enter values between 15 and 120
+ */	
 $Min_Deactivation = 15;
 $Max_Deactivation  = 120;
 $Seconds_For_Deactivation = 15;
@@ -299,8 +299,8 @@ add_action( 'wp_enqueue_scripts', function() {
 });
 
 /**
-* Get random popular post by current language if Polylang is installed.
-*/
+ * Get random popular post by current language if Polylang is installed.
+ */
 if(!function_exists('floating_related_posts_get_random_post_by_language')) {
 	function floating_related_posts_get_random_post_by_language() {
 		global $Url_picked_post;
@@ -372,8 +372,8 @@ if(!function_exists('floating_related_posts_get_random_post_by_language')) {
 }
 
 /**
-* Create Javascript code to include in the HEAD tag.
-*/
+ * Create Javascript code to include in the HEAD tag.
+ */
 if(!function_exists('floating_related_posts_add_Code_Javascript_in_tag_head')) {
 	function floating_related_posts_add_Code_Javascript_in_tag_head() {
 		global $Url_picked_post;
@@ -430,8 +430,8 @@ if(!function_exists('floating_related_posts_add_Code_Javascript_in_tag_head')) {
 }
 
 /**
-* Create HTML code to include in the BODY tag.
-*/
+ * Create HTML code to include in the BODY tag.
+ */
 if(!function_exists('floating_related_posts_add_Code_html_in_tag_body')) {
 	function floating_related_posts_add_Code_html_in_tag_body() {
 		global $Horizontal_Position;
@@ -446,11 +446,12 @@ if(!function_exists('floating_related_posts_add_Code_html_in_tag_body')) {
 		/**
 		 * Create the link to read the plugin help
 		 */
+		$locale = get_locale();	
 		$urlPluginGuide='https://www.phpcodewizard.it/antoniolamorgese';
-		$locale = apply_filters( 'plugin_locale', get_locale(), 'floating-related-posts-by-views-or-publish-date' );
+		//$locale = apply_filters( 'plugin_locale', get_locale(), 'floating-related-posts-by-views-or-publish-date' );
 		if(isset($locale)) {
 			if (strpos($locale, 'it_') !== false) {
-				$urlPluginGuide=$urlPluginGuide . '/come-aumentare-il-traffico-di-un-sito-web-con-un-innovativo-plugin-wordpress';
+				$urlPluginGuide=$urlPluginGuide . '/come-aumentare-il-traffico-di-un-sito-web-con-un-plugin-wordpress';
 			} else if (strpos($locale, 'en_') !== false) {
 				$urlPluginGuide=$urlPluginGuide . '/en/how-to-increase-website-traffic-with-an-plugin-wordPress';
 			} else if (strpos($locale, 'es_') !== false) {
@@ -474,7 +475,7 @@ if(!function_exists('floating_related_posts_add_Code_html_in_tag_body')) {
 				<div id="personecheleggonoadesso" style="z-index: 9999; opacity: <?php echo esc_html($Opacity); ?>; max-width: 450px; border: 1px solid <?php echo esc_html($Background_Color); ?>; border-radius: 8px; background-color: <?php echo esc_html($Background_Color); ?>; position: fixed; <?php echo esc_attr($Vertical_Position); ?>: 10px; <?php echo esc_attr($Horizontal_Position); ?>: 0px;">
 					<p>
 						<a  onclick="window.location.replace('<?php echo esc_url($urlPluginGuide); ?>');" 
-							href="#" class="close" data-dismiss="alert" aria-label="close"><i style="font-size:16px; color:black;" class="fa fa-question" aria-hidden="true"></i>&nbsp;
+							href="#" class="close" data-dismiss="alert" aria-label="close"><i style="font-size:16px; color:black;" class="fa fa-link" aria-hidden="true"></i>&nbsp;
 						</a>
 						<a  onclick="jQuery('#personecheleggonoadesso').hide('slow'); disable_onClose = true;" 
 							href="#" class="close" data-dismiss="alert" aria-label="close"><i style="font-size:16px; color:black;" class="fa fa-times" aria-hidden="true"></i>&nbsp;<br 
@@ -495,7 +496,7 @@ if(!function_exists('floating_related_posts_add_Code_html_in_tag_body')) {
 				<div id="personecheleggonoadesso" style="z-index: 9999; opacity: <?php echo esc_html($Opacity); ?>; max-width: 450px; border: 1px solid <?php echo esc_html($Background_Color); ?>; border-radius: 8px; background-color: <?php echo esc_html($Background_Color); ?>; position: fixed; <?php echo esc_html($Vertical_Position); ?>: 10px; <?php echo esc_html($Horizontal_Position); ?>: 0px;">
 					<p>
 						<a  onclick="window.location.replace('<?php echo esc_url($urlPluginGuide); ?>');" 
-							href="#" class="close" data-dismiss="alert" aria-label="close"><i style="font-size:16px; color:black;" class="fa fa-question" aria-hidden="true"></i>&nbsp;
+							href="#" class="close" data-dismiss="alert" aria-label="close"><i style="font-size:16px; color:black;" class="fa fa-link" aria-hidden="true"></i>&nbsp;
 						</a>
 						<a  onclick="jQuery('#personecheleggonoadesso').hide('slow'); disable_onClose = true;" 
 							href="#" class="close" data-dismiss="alert" aria-label="close"><i style="font-size:16px; color:black;" class="fa fa-times" aria-hidden="true"></i>&nbsp;<br 
