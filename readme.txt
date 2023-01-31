@@ -40,19 +40,19 @@ The plugin is simple to install:
 
 1. Download `Floating-Related-Posts-By-Views-Or-Date.zip`
 2. Unzip
-3. Upload `Floating-Related-Posts-By-Views-Or-Date` directory to your `/wp-content/plugins` directory
-4. Activate the plugin through the 'Plugins' menu in WordPress
-5. Go to *Settings > Floating Related Posts by Views or Publish Date to configure.
+3. Upload `Floating-Related-Posts-By-Views-Or-Date` directory to your `/wp-content/plugins` directory, or install the plugin throught the Wordpress plugins screen directly.
+4. Activate the plugin through the 'Plugins' menu in WordPress.
+5. Go to *Settings > Floating Related Posts by Views or Publish Date to configure the plugin.
 
 == Screenshots ==
-1. Floating Related Posts by Views or Publish Date on desktop
-2. Floating Related Posts by Views or Publish Date on smartphone
+1. Floating Related Posts by Views or Publish Date on desktop device
+2. Floating Related Posts by Views or Publish Date on smartphone device
 3. Admin panel to set options plugin
 
 == Changelog ==
 
 = 1.0.4 =
-* Added Italian translation.
+* Added Italian, Germany, Spanish, French, Portuguese and English translation.
 
 = 1.0.3 =
 * Added close button banner.
@@ -66,5 +66,4 @@ The plugin is simple to install:
 == Upgrade Notice ==
 
 = 1.0.3 =
-
 * Fix: Responsive for Titles and URL contents
