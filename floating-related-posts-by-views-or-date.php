@@ -457,14 +457,14 @@ if(!function_exists('floating_related_posts_add_Code_html_in_tag_body')) {
 				$post_title='how-to-increase-website-traffic-with-an-plugin-wordPress';
 				$urlPluginGuide=$urlPluginGuide . '/en/how-to-increase-website-traffic-with-an-plugin-wordPress';
 			} else if (strpos($locale, 'es_') !== false) {
-				$post_title='cómo-aumentar-tráfico-web-con-un-plugin-wordPress';
-				$urlPluginGuide=$urlPluginGuide . '/es/cómo-aumentar-tráfico-web-con-un-plugin-wordPress';
+				$post_title='como-aumentar-trafico-web-con-un-plugin-wordpress';
+				$urlPluginGuide=$urlPluginGuide . '/es/como-aumentar-trafico-web-con-un-plugin-wordpress';
 			} else if (strpos($locale, 'de_') !== false) {
-				$post_title='so-steigern-sie-den-website-traffic-mit-einem-wordPress-plugin';
-				$urlPluginGuide=$urlPluginGuide . '/de/so-steigern-sie-den-website-traffic-mit-einem-wordPress-plugin';
+				$post_title='so-steigern-sie-den-website-traffic-mit-einem-wordpress-plugin';
+				$urlPluginGuide=$urlPluginGuide . '/de/so-steigern-sie-den-website-traffic-mit-einem-wordpress-plugin';
 			} else if (strpos($locale, 'pt_') !== false) {
-				$post_title='como-aumentar-o-tráfego-do-site-com-um-plugin-wordPress';
-				$urlPluginGuide=$urlPluginGuide . '/pt/como-aumentar-o-tráfego-do-site-com-um-plugin-wordPress';
+				$post_title='como-aumentar-o-trafego-do-site-com-um-plugin-wordpress';
+				$urlPluginGuide=$urlPluginGuide . '/pt/como-aumentar-o-trafego-do-site-com-um-plugin-wordpress';
 			} else if (strpos($locale, 'fr_') !== false) {
 				$post_title='comment-augmenter-le-trafic-web-avec-un-plugin-wordPress';
 				$urlPluginGuide=$urlPluginGuide . '/fr/comment-augmenter-le-trafic-web-avec-un-plugin-wordPress';
