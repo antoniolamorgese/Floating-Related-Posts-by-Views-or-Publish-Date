@@ -298,14 +298,14 @@ if(! class_exists('FloatingRelatedPostsByViewsOrDate')){
 
 		public function seconds_to_activation_8_callback() {
 			printf(
-				'<input maxlength="4" size="4" class="regular-text" type="text" name="floating_related_posts_by_views_or_date_option_name[seconds_to_activation_8]" id="seconds_to_activation_8" value="%s"><label for="seconds_to_activation_8"><br />'.esc_html__('Enter a value between 15 and 120.', 'floating-related-posts-by-views-or-publish-date').'</label>',
+				'<input min="15" max="120" maxlength="4" size="4" class="regular-text" type="text" name="floating_related_posts_by_views_or_date_option_name[seconds_to_activation_8]" id="seconds_to_activation_8" value="%s"><label for="seconds_to_activation_8"><br />'.esc_html__('Enter a value between 15 and 120.', 'floating-related-posts-by-views-or-publish-date').'</label>',
 				isset( $this->floating_related_posts_by_views_or_date_options['seconds_to_activation_8'] ) ? esc_attr( $this->floating_related_posts_by_views_or_date_options['seconds_to_activation_8']) : '30'
 			);
 		}
 		
 		public function seconds_to_deactivation_9_callback() {
 			printf(
-				'<input maxlength="4" size="4" class="regular-text" type="text" name="floating_related_posts_by_views_or_date_option_name[seconds_to_deactivation_9]" id="seconds_to_deactivation_9" value="%s"><label for="seconds_to_deactivation_9"><br />'.esc_html__('Enter a value between 15 and 120.', 'floating-related-posts-by-views-or-publish-date').'</label>',
+				'<input min="15" max="120" maxlength="4" size="4" class="regular-text" type="text" name="floating_related_posts_by_views_or_date_option_name[seconds_to_deactivation_9]" id="seconds_to_deactivation_9" value="%s"><label for="seconds_to_deactivation_9"><br />'.esc_html__('Enter a value between 15 and 120.', 'floating-related-posts-by-views-or-publish-date').'</label>',
 				isset( $this->floating_related_posts_by_views_or_date_options['seconds_to_deactivation_9'] ) ? esc_attr( $this->floating_related_posts_by_views_or_date_options['seconds_to_deactivation_9']) : '15'
 			);
 		}	
