@@ -510,7 +510,7 @@ if(!function_exists('floating_related_posts_add_Code_html_in_tag_body')) {
 							href="#" class="close" data-dismiss="alert" aria-label="close"><i style="font-size:16px; color:black;" class="fa fa-link" aria-hidden="true"></i>&nbsp;
 						</a>
 						<a style="float:right;" onclick="jQuery('#personecheleggonoadesso').hide('slow'); disable_onClose = true;" 
-							href="#" class="close" data-dismiss="alert" aria-label="close"><i style="style="font-size:16px; color:black;" class="fa fa-times" aria-hidden="true"></i>&nbsp;<br 
+							href="#" class="close" data-dismiss="alert" aria-label="close"><i style="font-size:16px; color:black;" class="fa fa-times" aria-hidden="true"></i>&nbsp;<br 
 							style="margin-bottom:2px; line-height:3px; font-size: 2px;">
 						</a>
 						&nbsp;<strong style="color: <?php echo esc_html($Excerpt_Color); ?>;" id="Persone"></strong>
