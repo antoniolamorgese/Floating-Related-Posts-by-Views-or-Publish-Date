@@ -477,11 +477,6 @@ if(!function_exists('floating_related_posts_add_Code_html_in_tag_body')) {
 				$post_title='how-to-increase-website-traffic-with-an-plugin-wordPress';
 				$urlPluginGuide=$urlPluginGuide . '/en/how-to-increase-website-traffic-with-an-plugin-wordPress';
 			}
-			if (function_exists('the_slug_exists')) {
-				if (! the_slug_exists($post_title)) {
-					$urlPluginGuide='https://wordpress.org/plugins/floating-related-posts-by-views-or-publish-date/';
-				}
-			} 
 		} catch(Exception $e) {
 			$urlPluginGuide='https://wordpress.org/plugins/floating-related-posts-by-views-or-publish-date/';
 		}
@@ -532,16 +527,3 @@ if(!function_exists('floating_related_posts_add_Code_html_in_tag_body')) {
 	add_action('wp_footer', 'floating_related_posts_add_Code_html_in_tag_body');
 }	
 
-/**
- * Verify that the slug exists.
- */
-if (!function_exists('the_slug_exists')) {
-	function the_slug_exists($post_name) {
-		global $wpdb;
-		if($wpdb->get_row("SELECT post_name FROM wp_posts WHERE post_name = '" . $post_name . "'", 'ARRAY_A')) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-}
