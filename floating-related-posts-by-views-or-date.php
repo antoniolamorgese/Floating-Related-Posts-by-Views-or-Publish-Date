@@ -511,11 +511,11 @@ if(!function_exists('floating_related_posts_add_Code_html_in_tag_body')) {
 			<?php if(($floating_related_posts_by_views_or_date_options['mobile_visibility_2']==='mobile_visibility_2') || ($total_rows<=0)) { ?>
 				<div id="personecheleggonoadesso" style="z-index: 9999; opacity: <?php echo esc_html($Opacity); ?>; max-width: 450px; border: 1px solid <?php echo esc_html($Background_Color); ?>; border-radius: 8px; background-color: <?php echo esc_html($Background_Color); ?>; position: fixed; <?php echo esc_html($Vertical_Position); ?>: 10px; <?php echo esc_html($Horizontal_Position); ?>: 0px;">
 					<p>
-						<a  onclick="window.location.replace('<?php echo esc_url($urlPluginGuide); ?>');" 
+						<a style="float:right;" onclick="window.location.replace('<?php echo esc_url($urlPluginGuide); ?>');" 
 							href="#" class="close" data-dismiss="alert" aria-label="close"><i style="font-size:16px; color:black;" class="fa fa-link" aria-hidden="true"></i>&nbsp;
 						</a>
-						<a  onclick="jQuery('#personecheleggonoadesso').hide('slow'); disable_onClose = true;" 
-							href="#" class="close" data-dismiss="alert" aria-label="close"><i style="font-size:16px; color:black;" class="fa fa-times" aria-hidden="true"></i>&nbsp;<br 
+						<a style="float:right;" onclick="jQuery('#personecheleggonoadesso').hide('slow'); disable_onClose = true;" 
+							href="#" class="close" data-dismiss="alert" aria-label="close"><i style="style="font-size:16px; color:black;" class="fa fa-times" aria-hidden="true"></i>&nbsp;<br 
 							style="margin-bottom:2px; line-height:3px; font-size: 2px;">
 						</a>
 						&nbsp;<strong style="color: <?php echo esc_html($Excerpt_Color); ?>;" id="Persone"></strong>
