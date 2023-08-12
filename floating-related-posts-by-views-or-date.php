@@ -16,14 +16,14 @@ ob_start();
  * Description:        Increase website traffic free using "Floating Related Posts by Views or Publish Date". Show Floating Related Posts at the bottom or top of your visitor screen. Start <a href="options-general.php?page=floating-related-posts-by-views-or-date">Floating Related Posts Views or Date settings</a>.
  * Author:             Antonio Lamorgese
  * Author URI:         http://www.phpcodewizard.it/antoniolamorgese/
- * Version:            1.0.6
+ * Version:            1.2.0
  * License:            GNU General Public License v3.0
  * License URI:        https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:        floating-related-posts-by-views-or-publish-date
  * Domain Path:        /languages
  * GitHub Plugin URI:  https://github.com/antoniolamorgese/Floating-Related-Posts-by-Views-or-Publish-Date
  * Requires at least:  5.6
- * Tested up to:       6.2.0
+ * Tested up to:       6.3
  * Requires PHP:       5.6 or later
  *
  * This program is free software; you can redistribute it and/or modify it under the terms of the GNU
@@ -37,7 +37,7 @@ ob_start();
 /**
  * Exit if called directly.
  */
-if ( ! defined( 'WPINC' ) ) die;
+if ( ! defined( 'ABSPATH' ) ) exit; 
 
 /**
  * Load Localisation files.
@@ -45,7 +45,7 @@ if ( ! defined( 'WPINC' ) ) die;
  * Locales found in:
  * 	 - /wp-content/plugins/floating-related-posts-by-views-or-publish-date/languages/floating-related-posts-by-views-or-publish-date-LOCALE.mo
  */
-load_plugin_textdomain( 'floating-related-posts-by-views-or-publish-date', FALSE, dirname(plugin_basename(__FILE__)) . '/languages' );
+load_plugin_textdomain( 'floating-related-posts-by-views-or-publish-date', "", dirname(plugin_basename(__FILE__)) . '/languages' );
 
 /** 
  * Add link "Settings" in Wordpress administration Plugin
@@ -322,8 +322,10 @@ $Seconds_For_Deactivation = $Seconds_For_Deactivation*1000;
  * Enqueue styles "font-awesome" icons & code Javascript
  */
 add_action( 'wp_enqueue_scripts', function() {
-	wp_enqueue_style( 'styles-fontawesome-floating-related-posts', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' );
-	// Add javascript Code in HEAD section
+	//wp_enqueue_style( 'styles-fontawesome-floating-related-posts', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' );
+	wp_register_style( 'styles-fontawesome-floating-related-posts',  plugin_dir_url( __FILE__ ) . 'css/font-awesome.min.css' );
+	wp_enqueue_style( 'styles-fontawesome-floating-related-posts' );
+    // Add javascript Code in HEAD section
 	wp_register_script( 'disable-onclose-floating-related-posts', '' );
 	wp_enqueue_script( 'disable-onclose-floating-related-posts' );
 	wp_add_inline_script( 'disable-onclose-floating-related-posts', "var disable_onClose = false; var metaNameDescription = jQuery('meta[name=description]').prop('content'); document.cookie = 'metaDescription=metaNameDescription';" );
@@ -526,10 +528,10 @@ if(!is_admin()){
 			if (!wp_is_mobile()) { ?>
 				<!-- Desktop device -->
 				<?php if(($floating_related_posts_by_views_or_date_options['desktop_visibility_1']==='desktop_visibility_1') || ($total_rows<=0)) { ?>
-					<div id="personecheleggonoadesso" style="z-index: 9999; box-shadow:0 0 30px <?php echo esc_attr($Background_Color); ?>; opacity: <?php echo esc_attr($Opacity); ?>; max-width: 450px; border: 1px solid <?php echo esc_attr($Background_Color); ?>; border-radius: 8px; background-color: <?php echo esc_attr($Background_Color); ?>; position: fixed; <?php echo esc_attr($Vertical_Position); ?>: 10px; <?php echo esc_attr($Horizontal_Position); ?>: 0px;">
+					<div id="personecheleggonoadesso" style="display: none; z-index: 9999; box-shadow:0 0 30px <?php echo esc_attr($Background_Color); ?>; opacity: <?php echo esc_attr($Opacity); ?>; max-width: 450px; border: 1px solid <?php echo esc_attr($Background_Color); ?>; border-radius: 8px; background-color: <?php echo esc_attr($Background_Color); ?>; position: fixed; <?php echo esc_attr($Vertical_Position); ?>: 10px; <?php echo esc_attr($Horizontal_Position); ?>: 0px;">
 						<p>
 							<a style="float:right;" onclick="window.location.replace('<?php echo esc_url($urlPluginGuide); ?>');" 
-								href="#" class="close" data-dismiss="alert" aria-label="close"><i style="font-size:16px; color:black;" class="fa fa-link" aria-hidden="true"></i>&nbsp;
+								href="<?php echo esc_url($urlPluginGuide); ?>" class="close" data-dismiss="alert" aria-label="close"><i style="font-size:16px; color:black;" class="fa fa-link" aria-hidden="true"></i>&nbsp;
 							</a>
 							<a style="float:right;" onclick="jQuery('#personecheleggonoadesso').hide('slow'); disable_onClose = true;" 
 								href="#" class="close" data-dismiss="alert" aria-label="close"><i style="font-size:16px; color:black;" class="fa fa-times" aria-hidden="true"></i>&nbsp;<br 
@@ -539,7 +541,7 @@ if(!is_admin()){
 							&nbsp;<span style="color: <?php echo esc_attr($Excerpt_Color); ?>;" id="p0001"></span>&nbsp;
 							<br>&nbsp;<b style="color: <?php echo esc_attr($Excerpt_Color); ?>;" id="b0001"></b>
 							<i style="font-size:16px; color:black;" class="fa fa-share"></i>&nbsp;
-							<a id="a0001" target="_blank" href="#" alt=""><span id="s0001"></span></a>&nbsp;
+							<a style="text-decoration: underline;" id="a0001" target="_blank" href="#" alt=""><span id="s0001"></span></a>&nbsp;
 							<span id="e0001"></span>
 						</p>
 					</div>
@@ -547,10 +549,10 @@ if(!is_admin()){
 			<?php } else { ?>
 				<!-- Mobile device -->
 				<?php if(($floating_related_posts_by_views_or_date_options['mobile_visibility_2']==='mobile_visibility_2') || ($total_rows<=0)) { ?>
-					<div id="personecheleggonoadesso" style="z-index: 9999; box-shadow:0 0 30px <?php echo esc_attr($Background_Color); ?>; opacity: <?php echo esc_attr($Opacity); ?>; max-width: 450px; border: 1px solid <?php echo esc_attr($Background_Color); ?>; border-radius: 8px; background-color: <?php echo esc_attr($Background_Color); ?>; position: fixed; <?php echo esc_attr($Vertical_Position); ?>: 10px; <?php echo esc_attr($Horizontal_Position); ?>: 0px;">
+					<div id="personecheleggonoadesso" style="display: none; z-index: 9999; box-shadow:0 0 30px <?php echo esc_attr($Background_Color); ?>; opacity: <?php echo esc_attr($Opacity); ?>; max-width: 450px; border: 1px solid <?php echo esc_attr($Background_Color); ?>; border-radius: 8px; background-color: <?php echo esc_attr($Background_Color); ?>; position: fixed; <?php echo esc_attr($Vertical_Position); ?>: 10px; <?php echo esc_attr($Horizontal_Position); ?>: 0px;">
 						<p>
 							<a style="float:right;" onclick="window.location.replace('<?php echo esc_url($urlPluginGuide); ?>');" 
-								href="#" class="close" data-dismiss="alert" aria-label="close"><i style="font-size:16px; color:black;" class="fa fa-link" aria-hidden="true"></i>&nbsp;
+								href="<?php echo esc_url($urlPluginGuide); ?>" class="close" data-dismiss="alert" aria-label="close"><i style="font-size:16px; color:black;" class="fa fa-link" aria-hidden="true"></i>&nbsp;
 							</a>
 							<a style="float:right;" onclick="jQuery('#personecheleggonoadesso').hide('slow'); disable_onClose = true;" 
 								href="#" class="close" data-dismiss="alert" aria-label="close"><i style="font-size:16px; color:black;" class="fa fa-times" aria-hidden="true"></i>&nbsp;<br 
@@ -560,7 +562,7 @@ if(!is_admin()){
 							&nbsp;<span style="color: <?php echo esc_attr($Excerpt_Color); ?>;" id="p0001"></span>&nbsp;
 							<br>&nbsp;<b style="color: <?php echo esc_attr($Excerpt_Color); ?>;" id="b0001"></b>
 							<i style="font-size:16px; color:black;" class="fa fa-share"></i>&nbsp;
-							<a id="a0001" target="_blank" href="#" alt=""><span id="s0001"></span></a>
+							<a style="text-decoration: underline;" id="a0001" target="_blank" href="#" alt=""><span id="s0001"></span></a>
 							<span id="e0001"></span>
 						</p>
 					</div>

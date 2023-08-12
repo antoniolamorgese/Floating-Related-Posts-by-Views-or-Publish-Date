@@ -4,8 +4,8 @@ Contributors: antoniolamorgese
 Donate link: https://www.paypal.com/paypalme/AntonioLAMORGESE
 Tags: floating, related, related posts, floating related posts, free related posts, related articles
 Requires at least: 5.3
-Tested up to: 6.1.1
-Stable tag: 1.0.4
+Tested up to: 6.3
+Stable tag: 1.2.0
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -50,6 +50,15 @@ The plugin is simple to install:
 3. Admin panel to set options plugin
 
 == Changelog ==
+
+= 1.2.0 =
+* Fix: plugin issues
+
+= 1.1.0 =
+* Fix: responsive plugin
+
+= 1.0.6 =
+* Add box shadow
 
 = 1.0.4 =
 * Added Italian, Germany, Spanish, French, Portuguese and English translation.
