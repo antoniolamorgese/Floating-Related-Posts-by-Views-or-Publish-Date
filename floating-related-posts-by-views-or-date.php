@@ -1,5 +1,4 @@
 <?php
-ob_start();
 /**
  * Floating Related Posts by Views or Publish Date
  *
